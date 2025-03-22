@@ -15,7 +15,7 @@ class UserController extends Controller
             'email'    => ['required', 'email', 'min:1', Rule::unique('users', 'email')],
             'password' => ['required', 'string', 'min:1'],
         ]);
-        
+
         $user = User::create($signupformFields);
         auth() -> login($user);
 
@@ -37,5 +37,10 @@ class UserController extends Controller
             'email' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
 
+}
+
+public function logoutPost() {
+    Auth::logout();
+    return redirect('/login'); 
 }
 }

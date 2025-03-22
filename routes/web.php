@@ -32,3 +32,6 @@ Route::post('/login', [UserController::class, 'loginPost'])
 Route::get('/mainpage', function () {
     return view('mainpage');
 })->name('mainpage');
+
+Route::post('/mainpage', [UserController::class, 'logoutPost'])
+->name("logout.post");

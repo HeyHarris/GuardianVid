@@ -9,9 +9,12 @@
 <body>
 <div class="banner">
     <h1>Guardian Vids</h1>
-    <button class="logout-link">Log Out</button>
+    <form method="POST" action="{{ route('logout.post') }}">
+    {{ csrf_field() }}
+        <button class="logout-link" type="submit">Logout</button>
+    </form>
   </div>
 
-  
+
 </body>
 </html>
