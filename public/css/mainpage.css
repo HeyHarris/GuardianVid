@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background: #111;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .logout-link {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    color: #fff;
+    font-size: 1rem;
+    text-decoration: none;
+    background: #e74c3c;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+.logout-link:hover {
+    background: #c0392b;
+}
+
+.banner h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    text-shadow: 2px 2px 12px rgba(0,0,0,0.7);
+}
+  .banner {
+    position: relative;
+    display: flex;
+    justify-content: center; /* centers the <h1> */
+    align-items: center;
+    padding: 3rem 1.5rem;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    overflow: hidden;
+}
+
+  .banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 70%);
+    animation: rotate 10s linear infinite;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+
+  @media(max-width: 768px) {
+    .banner h1 { font-size: 3rem; letter-spacing: 4px; }
+    .banner { padding: 2rem 1rem; }
+  }
