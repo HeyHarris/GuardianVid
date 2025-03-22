@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
 </head>
 <body>
-    @auth
-    {{ view('mainpage')}}
-    @else
+
     <div class="banner">
         <h1>Guardian Vid</h1>
     </div>
@@ -24,6 +22,5 @@
         </form>
         <a href="{{ route('login') }}" class="login-link">Already have an account? Login</a>
     </div>
-    @endauth
 </body>
 </html>

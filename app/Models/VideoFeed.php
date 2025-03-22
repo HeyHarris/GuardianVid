@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class VideoFeed extends Model
 {
-    use HasFactory, Notifiable;
      /**
      * The attributes that are mass assignable.
      *
@@ -16,6 +15,9 @@ class VideoFeed extends Model
         'path',
         'uploaded_by',
         'needs_moderation',
+        'title',
+        'description',
+        'thumbnail'
     ];
 
 

@@ -8,11 +8,7 @@
 </head>
 <body>
 
-@auth
-    {{ view('mainpage')}}
-    @else
 
-    @endauth
 <div class="banner">
         <h1>Guardian Vid</h1>
     </div>
