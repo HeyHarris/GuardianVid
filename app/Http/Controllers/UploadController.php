@@ -42,8 +42,7 @@ class UploadController extends Controller{
             if (isset($videoPath)) {
                 Storage::disk('public')->delete($videoPath);
             }
-    
-            return back()->withErrors(['error' => 'Upload failed: ' . $e->getMessage()]);
+            return back()->with('error', 'Upload failed: Please Try Again Later');
         }
     }
 }

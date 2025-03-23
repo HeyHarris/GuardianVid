@@ -4,7 +4,12 @@
 @section('title', 'Upload')
 
 @section('content')
-
+@if (session('error'))
+    <script>
+        toastr.options.positionClass = 'toast-top-center';
+        toastr.error("{{ session('error') }}");
+    </script>
+@endif
 <div class="upload-card">
     <div class='content'>
     <h2>Upload Video</h2>

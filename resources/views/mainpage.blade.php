@@ -4,6 +4,13 @@
 
 @section('content')
     <section class="video-feed-section">
+    @if (session('error'))
+    <script>
+        toastr.options.positionClass = 'toast-top-center';
+        toastr.error("{{ session('error') }}");
+    </script>
+@endif
+
     @foreach($videos as $video)
         <div class="video-card">
         <a href="{{ asset('storage/' . $video->path) }}" target="_blank" class="video-thumb">
@@ -19,5 +26,6 @@
             </div>
         </div>
     @endforeach
+
 </section>
 @endsection
