@@ -4,13 +4,12 @@
 
 @section('content')
     <section class="video-feed-section">
-    @if (session('error'))
+    @if (session('success'))
     <script>
         toastr.options.positionClass = 'toast-top-center';
-        toastr.error("{{ session('error') }}");
+        toastr.success("{{ session('success') }}");
     </script>
 @endif
-
     @foreach($videos as $video)
         <div class="video-card">
         <a href="{{ asset('storage/' . $video->path) }}" target="_blank" class="video-thumb">

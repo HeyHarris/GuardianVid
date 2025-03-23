@@ -4,6 +4,12 @@
 
 @section('content')
 
+@if (session('success'))
+    <script>
+        toastr.options.positionClass = 'toast-top-center';
+        toastr.success("{{ session('success') }}");
+    </script>
+@endif
 <section class="video-feed-section-moderator">
 @foreach($videos as $video)
 <div class="video-card-moderator">

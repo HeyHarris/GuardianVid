@@ -38,7 +38,7 @@ class ModerationController extends Controller
         $video->needs_moderation = false;
         $video->save();
 
-        return back()->with('success', 'Video approved!');
+        return back()->with('success', 'Video approved and uploaded!');
     }
 
     public function reject(VideoFeed $video): RedirectResponse
