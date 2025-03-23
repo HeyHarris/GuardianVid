@@ -20,16 +20,9 @@ class VideoFeed extends Model
         'thumbnail'
     ];
 
-
-     /**
-     * Get the attributes that should be cast.
-     *
-     * @return array<string, string>
-     */
-    protected function casts(): array
-    {
-        return [
-            'uploaded_date' => 'datetime'
-        ];
-    }
+    public function user()
+{
+    // Every video belongs to a user, using uploaded_by as the foreign key
+    return $this->belongsTo(User::class, 'uploaded_by'); 
+}
 }

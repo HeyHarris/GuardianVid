@@ -23,7 +23,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('video_feeds', function (Blueprint $table) {
-            $table->dropColumn('role');
             $table->dropColumn('title');
             $table->dropColumn('description');
             

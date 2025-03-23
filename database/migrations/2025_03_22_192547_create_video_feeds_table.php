@@ -22,7 +22,6 @@ return new class extends Migration
                 ->on('users')
                 ->cascadeOnDelete(); 
                 
-            $table->timestamp('uploaded_date')->useCurrent();
             $table->bigInteger('view_count')->nullable(); 
             $table->boolean('needs_moderation')->default(false);
             $table->timestamps();

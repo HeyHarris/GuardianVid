@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -36,4 +37,13 @@ Route::post('/login', [UserController::class, 'loginPost'])
 Route::middleware('auth')->group(function () {
     Route::get('/mainpage', [VideoFeedController::class, 'getVideoFeed'])->name('mainpage');
     Route::post('/mainpage', [UserController::class, 'logoutPost'])->name("logout.post");
+});
+
+//Upload Page Routes *******************************************************************
+
+Route::middleware('auth')->group(function () {
+    Route::get('/upload', function () {
+        return view('upload');
+    })->name('upload');
+    Route::post('/upload', [UploadController::class, 'uploadVideo'])->name("upload.post");
 });

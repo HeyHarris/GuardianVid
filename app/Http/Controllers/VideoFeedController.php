@@ -9,7 +9,12 @@ class VideoFeedController extends Controller
 {
     public function getVideoFeed(Request $request) {
 
-        $videos = VideoFeed::whereNeedsModeration(false)->get();
+        $videos = VideoFeed::with('user')
+        ->whereNeedsModeration(false)
+        ->orderBy('created_at', 'desc')
+        ->get();
+
+
         
         return view('mainpage', compact('videos'));
     }

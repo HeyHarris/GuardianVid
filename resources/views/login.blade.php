@@ -9,7 +9,7 @@
 <body>
 
 
-<div class="banner">
+<div class="banner-login">
         <h1>Guardian Vid</h1>
     </div>
     <div class="container">
