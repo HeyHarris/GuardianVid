@@ -28,7 +28,7 @@ class UploadController extends Controller{
                 'path'             => $videoPath,
                 'uploaded_by'      => Auth::id(),
                 'uploaded_date'    => now(),
-                'needs_moderation' => false
+                'needs_moderation' => true
             ]);
             DB::commit();
             return redirect()->route('mainpage')->with('success', 'Video uploaded successfully!');

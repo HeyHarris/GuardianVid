@@ -7,7 +7,6 @@
 
 <div class="upload-card">
     <div class='content'>
-    <a href="{{ route('mainpage') }}" class="back-link">← Back to Main Page</a>
     <h2>Upload Video</h2>
     <form action="{{ route('upload.post') }}" method="POST" enctype="multipart/form-data">
     {{ csrf_field() }}

@@ -4,9 +4,6 @@
 
 @section('content')
     <section class="video-feed-section">
-                <div class="side-upload-link">
-    <a href="{{ route('upload') }}">+ Upload Video</a>
-</div>
     @foreach($videos as $video)
         <div class="video-card">
         <a href="{{ asset('storage/' . $video->path) }}" target="_blank" class="video-thumb">

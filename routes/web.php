@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\UploadController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\UploadController;
 use App\Http\Controllers\VideoFeedController;
+use App\Http\Controllers\ModerationController;
 
 
 
@@ -46,4 +47,12 @@ Route::middleware('auth')->group(function () {
         return view('upload');
     })->name('upload');
     Route::post('/upload', [UploadController::class, 'uploadVideo'])->name("upload.post");
+});
+
+//Moderation Queue *******************************************************************
+
+Route::middleware('auth')->group(function () {
+    Route::get('/moderation', [ModerationController::class, 'getModerationVideoFeed'])->name('moderation');
+    Route::post('/moderation/{video}/approve', [ModerationController::class, 'approve'])->name('moderation.approve');
+    Route::post('/moderation/{video}/reject', [ModerationController::class, 'reject'])->name('moderation.reject');
 });

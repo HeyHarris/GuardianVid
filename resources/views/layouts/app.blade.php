@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{ asset('css/mainpage.css') }}">
     <link rel="stylesheet" href="{{ asset('css/banner.css') }}">
     <link rel="stylesheet" href="{{ asset('css/upload.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/moderation.css') }}">
 </head>
 <body>
     <x-banner />
