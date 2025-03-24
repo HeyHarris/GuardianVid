@@ -1,5 +1,5 @@
 
-.video-feed-section-moderator {
+.video-feed-section-user {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
@@ -9,7 +9,7 @@
     justify-content: center;
   }
   
-  .video-card-moderator {
+  .video-card-user {
     background: #1e1e1e;
     border-radius: 10px;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
@@ -21,25 +21,25 @@
   }
 
   @media (max-width: 1100px) {
-    .video-card-moderator {
+    .video-card-user {
       width: 100%;
     }
   }
   
-  .video-thumb-moderator video {
+  .video-thumb-user video {
     width: 450px;
     height: auto;
     border-radius: 8px;
     margin-bottom: 1rem;
   }
   
-  .video-info-moderator {
+  .video-info-user {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
   }
   
-  .video-info-moderator h3 {
+  .video-info-user h3 {
     margin: 0;
     font-size: 1.25rem;
   }
@@ -50,7 +50,7 @@
     margin-top: 0.75rem;
   }
   
-  .moderator-actions button {
+  .user-actions button {
     padding: 8px 14px;
     font-size: 0.9rem;
     font-weight: bold;
@@ -61,20 +61,20 @@
     transition: background 0.3s ease, transform 0.2s ease;
   }
   
-  .moderator-actions button.approve {
-    background-color: #2ecc71;
+  .user-actions button.edit {
+    background-color: #2d2fad;
   }
   
-  .moderator-actions button.approve:hover {
-    background-color: #27ae60;
+  .user-actions button.edit:hover {
+    background-color: #2729ae;
     transform: scale(1.03);
   }
   
-  .moderator-actions button.reject {
+  .user-actions button.delete {
     background-color: #e74c3c;
   }
   
-  .moderator-actions button.reject:hover {
+  .user-actions button.delete:hover {
     background-color: #c0392b;
     transform: scale(1.03);
   }

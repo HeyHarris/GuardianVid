@@ -14,7 +14,7 @@
     <div class="container">
         <h2>Create Account</h2>
         <form action="{{ route('register.post') }}" method="POST">
-            {{ csrf_field() }}
+        @csrf
             <input name="name" type="text" placeholder="Full Name" required>
             <input name="email" type="email" placeholder="Email Address" required>
             <input name="password" type="password" placeholder="Create Password" required>

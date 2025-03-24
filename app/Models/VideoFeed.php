@@ -25,4 +25,9 @@ class VideoFeed extends Model
     // Every video belongs to a user, using uploaded_by as the foreign key
     return $this->belongsTo(User::class, 'uploaded_by'); 
 }
+
+public function scopeOwnedBy($query, $userId)
+{
+    return $query->where('uploaded_by', $userId);
+}
 }

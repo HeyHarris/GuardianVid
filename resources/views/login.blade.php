@@ -15,7 +15,7 @@
     <div class="container">
         <h2>Login</h2>
         <form action="{{ route('login.post') }}" method="POST">
-            {{ csrf_field() }}
+        @csrf
             @error('email')
     <p class="error-message">{{ $message }}</p>
             @enderror

@@ -14,7 +14,7 @@
     <div class='content'>
     <h2>Upload Video</h2>
     <form action="{{ route('upload.post') }}" method="POST" enctype="multipart/form-data">
-    {{ csrf_field() }}
+    @csrf
         <input type="text" name="title" placeholder="Video Title" required>
         <textarea name="description" placeholder="Video Description"></textarea>
         <label>Thumbnail Image:</label>

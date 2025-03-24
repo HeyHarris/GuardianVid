@@ -8,8 +8,9 @@
         </div>
 
 <div class="side-upload-link">
-<a href="{{ route('mainpage') }}">Your Feed</a>
+    <a href="{{ route('mainpage') }}">Your Feed</a>
     <a href="{{ route('upload') }}">+ Upload Video</a>
+    <a href="{{ route('useruploads') }}">Your Uploads</a>
     @if(Auth::user()?->isAdmin())
     <a href="{{ route('moderation') }}">Moderation Feed</a>
 @endif

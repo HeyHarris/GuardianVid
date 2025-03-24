@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\VideoFeed;
-use Illuminate\Http\Request;
+
 
 class VideoFeedController extends Controller
 {
-    public function getVideoFeed(Request $request) {
+    public function getVideoFeed() {
 
         $videos = VideoFeed::with('user')
         ->whereNeedsModeration(false)
