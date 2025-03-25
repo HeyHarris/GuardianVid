@@ -10,27 +10,29 @@ use Illuminate\Support\Facades\Storage;
 class ModerationController extends Controller
 {
 
-    public function getModerationVideoFeed(Request $request) {
+    public function getModerationVideoFeed(Request $request)
+    {
 
         $videos = VideoFeed::with('user')
-        ->whereNeedsModeration(true)
-        ->orderBy('created_at', 'asc')
-        ->get();
+            ->whereNeedsModeration(true)
+            ->orderBy('created_at', 'asc')
+            ->get();
 
 
-        
+
         return view('moderation', compact('videos'));
     }
 
-    public function getRejectedVideoFeed(Request $request) {
+    public function getRejectedVideoFeed(Request $request)
+    {
 
         $videos = VideoFeed::with('user')
-        ->whereNeedsModeration(true)
-        ->orderBy('created_at', 'asc')
-        ->get();
+            ->whereNeedsModeration(true)
+            ->orderBy('created_at', 'asc')
+            ->get();
 
 
-        
+
         return view('moderation', compact('videos'));
     }
     public function approve(VideoFeed $video): RedirectResponse

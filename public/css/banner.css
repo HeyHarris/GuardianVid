@@ -1,62 +1,72 @@
-
 .banner {
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem 1.5rem;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    z-index: 1000;
-    overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15), transparent 70%);
+  animation: rotate 10s linear infinite;
+}
+
+.banner h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.7);
+}
+
+.logout-link {
+  position: absolute;
+  top: 2.5rem;
+  right: 3.5rem;
+  color: #fff;
+  background: #e74c3c;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.logout-link:hover {
+  background: #c0392b;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
   }
-  
-  .banner::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at center, rgba(255,255,255,0.15), transparent 70%);
-    animation: rotate 10s linear infinite;
+
+  to {
+    transform: rotate(360deg);
   }
-  
+}
+
+@media(max-width: 768px) {
+  .banner {
+    padding: 1.5rem 1rem;
+  }
+
   .banner h1 {
-    margin: 0;
-    font-size: 2.5rem;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 8px;
-    text-shadow: 2px 2px 12px rgba(0,0,0,0.7);
+    font-size: 2rem;
+    letter-spacing: 4px;
   }
-  
-  .logout-link {
-    position: absolute;
-    top: 2.5rem;
-    right: 3.5rem;
-    color: #fff;
-    background: #e74c3c;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1rem;
-    cursor: pointer;
-  }
-  
-  .logout-link:hover {
-    background: #c0392b;
-  }
-  
-  @keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-  
-  @media(max-width: 768px) {
-    .banner { padding: 1.5rem 1rem; }
-    .banner h1 { font-size: 2rem; letter-spacing: 4px; }
-  }
+}

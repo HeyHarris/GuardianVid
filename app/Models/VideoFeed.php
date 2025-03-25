@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class VideoFeed extends Model
 {
-     /**
+    /**
      * The attributes that are mass assignable.
      *
      * @var list<string>
@@ -21,13 +21,13 @@ class VideoFeed extends Model
     ];
 
     public function user()
-{
-    // Every video belongs to a user, using uploaded_by as the foreign key
-    return $this->belongsTo(User::class, 'uploaded_by'); 
-}
+    {
+        // Every video belongs to a user, using uploaded_by as the foreign key
+        return $this->belongsTo(User::class, 'uploaded_by');
+    }
 
-public function scopeOwnedBy($query, $userId)
-{
-    return $query->where('uploaded_by', $userId);
-}
+    public function scopeOwnedBy($query, $userId)
+    {
+        return $query->where('uploaded_by', $userId);
+    }
 }

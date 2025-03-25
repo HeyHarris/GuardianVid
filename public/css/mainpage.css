@@ -14,6 +14,7 @@ body {
   flex-direction: column;
   gap: 0.5rem;
 }
+
 .side-upload-link a {
   display: inline-block;
   background-color: #4CAF50;
@@ -23,13 +24,14 @@ body {
   border-radius: 6px;
   text-decoration: none;
   font-weight: bold;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   transition: background 0.3s;
 }
 
 .side-upload-link a:hover {
   background-color: #45a049;
 }
+
 /* Video Cards */
 .video-feed-section {
   display: flex;
@@ -46,7 +48,7 @@ body {
   gap: 1rem;
   background: #1e1e1e;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
 
@@ -92,6 +94,7 @@ body {
   margin-bottom: 0.25rem;
   display: block;
 }
+
 /* End Video Cards */
 
 .alert-success {

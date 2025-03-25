@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -20,9 +19,9 @@ return new class extends Migration
             $table->foreign('uploaded_by')
                 ->references('id')
                 ->on('users')
-                ->cascadeOnDelete(); 
-                
-            $table->bigInteger('view_count')->nullable(); 
+                ->cascadeOnDelete();
+
+            $table->bigInteger('view_count')->nullable();
             $table->boolean('needs_moderation')->default(false);
             $table->timestamps();
         });

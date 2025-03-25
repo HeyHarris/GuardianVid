@@ -11,26 +11,26 @@ use App\Http\Controllers\UsersUploadsController;
 //Sign Up Routes *******************************************************************
 
 Route::get('/', function () {
-    if(Auth::check()) {
+    if (Auth::check()) {
         return redirect()->route('mainpage');
-        }
-        return view('home');
+    }
+    return view('home');
 })->name('home');
 
 Route::post('/register', [UserController::class, 'registerPost'])
-->name("register.post");
+    ->name("register.post");
 
 
 //Login Routes *******************************************************************
 Route::get('/login', function () {
-    if(Auth::check()) {
-    return redirect()->route('mainpage');
+    if (Auth::check()) {
+        return redirect()->route('mainpage');
     }
     return view('login');
 })->name('login');
 
 Route::post('/login', [UserController::class, 'loginPost'])
-->name("login.post");
+    ->name("login.post");
 
 //Main Page Routes *******************************************************************
 

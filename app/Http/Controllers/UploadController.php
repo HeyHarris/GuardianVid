@@ -8,26 +8,28 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
-class UploadController extends Controller{
-    public function uploadVideo(Request $request) {
+class UploadController extends Controller
+{
+    public function uploadVideo(Request $request)
+    {
         $uploadVideoFields = $request->validate([
-            'title'       => ['required', 'string', 'min:1'],
+            'title' => ['required', 'string', 'min:1'],
             'description' => ['required', 'string']
         ]);
         DB::beginTransaction();
         try {
             $thumbnailName = str_replace(' ', '-', $request->file('thumbnail')->getClientOriginalName());
-            $videoName     =  str_replace(' ', '-', $request->file('video')->getClientOriginalName());
-    
+            $videoName = str_replace(' ', '-', $request->file('video')->getClientOriginalName());
+
             $thumbnailPath = $request->file('thumbnail')->storeAs('thumbnails', $thumbnailName, 'public');
-            $videoPath     = $request->file('video')->storeAs('videos', $videoName, 'public');
+            $videoPath = $request->file('video')->storeAs('videos', $videoName, 'public');
             VideoFeed::create([
-                'title'            => $uploadVideoFields['title'],
-                'description'      => $uploadVideoFields['description'],
-                'thumbnail'        => $thumbnailPath,
-                'path'             => $videoPath,
-                'uploaded_by'      => Auth::id(),
-                'uploaded_date'    => now(),
+                'title' => $uploadVideoFields['title'],
+                'description' => $uploadVideoFields['description'],
+                'thumbnail' => $thumbnailPath,
+                'path' => $videoPath,
+                'uploaded_by' => Auth::id(),
+                'uploaded_date' => now(),
                 'needs_moderation' => true
             ]);
             DB::commit();

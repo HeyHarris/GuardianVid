@@ -1,80 +1,79 @@
-
 .video-feed-section-moderator {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding: 2rem;
-    margin: 0 auto;
-    width: 1200px;
-    justify-content: center;
-  }
-  
-  .video-card-moderator {
-    background: #1e1e1e;
-    border-radius: 10px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
-    padding: 1rem;
-    width: 500px;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  margin: 0 auto;
+  width: 1200px;
+  justify-content: center;
+}
 
-  @media (max-width: 1100px) {
-    .video-card-moderator {
-      width: 100%;
-    }
+.video-card-moderator {
+  background: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  width: 500px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1100px) {
+  .video-card-moderator {
+    width: 100%;
   }
-  
-  .video-thumb-moderator video {
-    width: 450px;
-    height: auto;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-  }
-  
-  .video-info-moderator {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .video-info-moderator h3 {
-    margin: 0;
-    font-size: 1.25rem;
-  }
-  
-  .moderation-actions {
-    display: flex;
-    gap: 1rem;
-    margin-top: 0.75rem;
-  }
-  
-  .moderator-actions button {
-    padding: 8px 14px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 6px;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-  }
-  
-  .moderator-actions button.approve {
-    background-color: #2ecc71;
-  }
-  
-  .moderator-actions button.approve:hover {
-    background-color: #27ae60;
-    transform: scale(1.03);
-  }
-  
-  .moderator-actions button.reject {
-    background-color: #e74c3c;
-  }
-  
-  .moderator-actions button.reject:hover {
-    background-color: #c0392b;
-    transform: scale(1.03);
-  }
+}
+
+.video-thumb-moderator video {
+  width: 450px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.video-info-moderator {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.video-info-moderator h3 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.moderation-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.moderator-actions button {
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.moderator-actions button.approve {
+  background-color: #2ecc71;
+}
+
+.moderator-actions button.approve:hover {
+  background-color: #27ae60;
+  transform: scale(1.03);
+}
+
+.moderator-actions button.reject {
+  background-color: #e74c3c;
+}
+
+.moderator-actions button.reject:hover {
+  background-color: #c0392b;
+  transform: scale(1.03);
+}
